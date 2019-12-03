@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{margin:0;padding:0;}
+    .clearFix::after{content: '';display: block;clear: both;}
+    html{font-size: 13.333333vw;}
+    header .box{width: 7.5rem;height: 3.15rem;background: red;}
+    header .box1{width: 7.5rem;height: 0.15rem;background: #ccc;}
+    .box2{width: 7.5rem;height: 6.13rem;background:rgb(184, 177, 177);}
+    .box3{
+        width: 3.41rem;
+        height: 1.58rem;
+        background: pink;
+        float: left;
+        margin-left: 0.24rem;
+        margin-top: 0.68rem;
+        border-radius: 6px;
+    }
+    .box4{
+        width: 3.41rem;
+        height: 1.58rem;
+        background: pink;
+        float: left;
+        margin-left: 0.20rem;
+        margin-top: 0.68rem;
+        border-radius: 6px;
+    }
+    /*  
+        em是继承父级的px的两倍
+        rem是继承根元素px的, 只改一个地方就继承了所有的
+
+        1:如果设计师给一个640的设计稿,设置font-size:100 / 6.4 = 15.525vw
+        2:如果设计师给一个750的设计稿,设置font-size:100 / 7.6 = 13.333333vw
+     */
+    </style>
+</head>
+<body>
+    <section class="wrap">
+        <header>
+            <section class="box"></section>
+            <div class="box1"></div>
+        </header>
+        <div class="box2">
+            <div class="box3"></div>
+            <div class="box4"></div>
+        </div>
+    </section>
+</body>
+<script>
+
+    // 用JSON.stringify把对象转成字符串，再用JSON.parse把字符串转成新的对象。
+    var obj1 = { 
+        wxs: { a: 10 } 
+    };
+    var obj2 = JSON.parse(JSON.stringify(obj1));
+    obj2.wxs.a = 20;
+    console.log(obj1);
+    // { wxs: { a: 10 } } <-- 沒被改到
+    console.log(obj2);
+    // { wxs: { a: 20 } }
+    console.log(obj1 === obj2);
+    // false
+    console.log(obj1.wxs === obj2.wxs);
+    // false
+</script>
+</html>

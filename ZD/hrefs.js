@@ -1,0 +1,10 @@
+var div5 = document.querySelector('footer div:last-child');
+div5.onclick = function(){window.location.href = '关于我们.html';}
+var div4 = document.querySelector('footer div:nth-child(4)');
+div4.onclick = function(){window.location.href = '微风投.html';}
+var div3 = document.querySelector('footer div:nth-child(3)');
+div3.onclick = function(){window.location.href = '市场定位.html';}
+var div2 = document.querySelector('footer div:nth-child(2)');
+div2.onclick = function(){window.location.href = '项目.html';}
+var div1 = document.querySelector('footer div:first-child');
+div1.onclick = function(){window.location.href = '首页.html';}
